@@ -13,20 +13,17 @@ Autor del programa: Rafael Jiménez Cobos
 Fecha de creación: 14/10/22
 """
 
-# Pedimos al usuario los datos de entrada A, B y C
+a = float(input('Introduce la dimensión A: '))  # Pedimos al usuario que introduzca la dimensión A
+b = float(input('Introduce la dimensión B: '))  # Pedimos al usuario que introduzca la dimensión B
+c = float(input('Introduce la dimensión C: '))  # Pedimos al usuario que introduzca la dimensión C
 
-a = float(input('Introduce la dimensión A: '))
-b = float(input('Introduce la dimensión B: '))
-c = float(input('Introduce la dimensión C: '))
-
-# Construimos la estructura alternativa
-
-if a**2+b**2 == c**2 or b**2+c**2 == a**2 or c**2+a**2 == b**2:
-    print('Triángulo rectángulo.')
-if (a == b and a != c) or (b == c and b != a) or (c == a and c != b):
-    print('Triángulo isósceles.')
-else:
-    if a == b and a == c:
-        print('Triángulo equilátero.')
-    else:
-        print('Triángulo escaleno.')
+if a**2+b**2 == c**2 or b**2+c**2 == a**2 or c**2+a**2 == b**2:  # Si se cumple Pitágoras...
+    print('Triángulo rectángulo.')  # Indicamos que se trata de un triángulo rectángulo
+if (a == b and a != c) or (b == c and b != a) or (c == a and c != b):  # Si solo dos lados del
+    # triángulo son iguales...
+    print('Triángulo isósceles.')  # Indicamos que se trata de un triángulo isósceles
+else:  # De lo contrario...
+    if a == b and a == c:  # Si los 3 lados son iguales...
+        print('Triángulo equilátero.')  # Indicamos que se trata de un triángulo equilátero
+    else:  # De lo contrario...
+        print('Triángulo escaleno.')  # Indicamos que se trata de un triángulo escaleno

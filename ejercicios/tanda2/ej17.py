@@ -17,27 +17,28 @@ Autor del programa: Rafael Jiménez Cobos
 Fecha de creación: 16/10/22
 """
 
-dice = int(input('Introduce el número del dado: '))
+dice = int(input('Introduce el número del dado: '))  # Indicamos al usuario introducir un número que corresponda
+# con la cara de un dado
 
-one = 'uno'
-two = 'dos'
-three = 'tres'
-four = 'cuatro'
-five = 'cinco'
-six = 'seis'
+one = 'uno'  # Almacenamos la cadena 'uno'
+two = 'dos'  # Almacenamos la cadena 'dos'
+three = 'tres'  # Almacenamos la cadena 'tres'
+four = 'cuatro'  # Almacenamos la cadena 'cuatro'
+five = 'cinco'  # Almacenamos la cadena 'cinco'
+six = 'seis'  # Almacenamos la cadena 'seis'
 
-if 1 <= dice <= 6:
-    if dice == 1:
-        print(f'En la cara opuesta está el {six}')
-    elif dice == 2:
-        print(f'En la cara opuesta está el {five}')
-    elif dice == 3:
-        print(f'En la cara opuesta está el {four}')
-    elif dice == 4:
-        print(f'En la cara opuesta está el {three}')
-    elif dice == 5:
-        print(f'En la cara opuesta está el {two}')
-    elif dice == 6:
-        print(f'En la cara opuesta está el {one}')
-else:
-    print('ERROR. Número incorrecto.')
+if 1 <= dice <= 6:  # Si el número está entre 1 y 6...
+    if dice == 1:  # Si el número es 1...
+        print(f'En la cara opuesta está el {six}')  # Mostramos el número opuesto
+    elif dice == 2:  # Si el número es 2...
+        print(f'En la cara opuesta está el {five}')  # Mostramos el número opuesto
+    elif dice == 3:  # Si el número es 3...
+        print(f'En la cara opuesta está el {four}')  # Mostramos el número opuesto
+    elif dice == 4:  # Si el número es 4...
+        print(f'En la cara opuesta está el {three}')  # Mostramos el número opuesto
+    elif dice == 5:  # Si el número es 5...
+        print(f'En la cara opuesta está el {two}')  # Mostramos el número opuesto
+    elif dice == 6:  # Si el número es 6...
+        print(f'En la cara opuesta está el {one}')  # Mostramos el número opuesto
+else:  # De lo contrario...
+    print('ERROR. Número incorrecto.')  # Indicamos que el número es incorrecto

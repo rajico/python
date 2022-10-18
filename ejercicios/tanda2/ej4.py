@@ -6,16 +6,11 @@ Autor del programa: Rafael Jiménez Cobos
 Fecha de creación: 14/10/22
 """
 
-# Preguntamos al usuario dos números que recogeremos en las variables num1 y num2
+num1 = int(input('Introduce el primer número: '))  # Pedimos al usuario introducir el primer número
+num2 = int(input('Introduce el segundo número: '))  # Pedimos al usuario introducir el segundo número
 
-num1 = int(input('Introduce el primer número: '))
-num2 = int(input('Introduce el segundo número: '))
-
-# Creamos la estructura alternativa con if else para realizar y mostrar la división, y en caso
-# de que el segundo número sea un 0, un aviso.
-
-if num2 > 0:
-    div = num1 // num2
-    print(f'El resultado de la división entre {num1} y {num2} es {div}.')
-else:
-    print(f'¡AVISO! No puedes dividir entre 0.')
+if num2 > 0:  # Si el segundo número es mayor que 0...
+    div = num1 // num2  # Almacenamos en una variable la división entre los dos números
+    print(f'El resultado de la división entre {num1} y {num2} es {div}.')  # Y mostramos por pantalla el resultado
+else:  # De lo contrario
+    print(f'¡AVISO! No puedes dividir entre 0.')  # Mostramos un aviso

@@ -5,14 +5,10 @@ Autor del programa: Rafael Jiménez Cobos
 Fecha de creación: 14/10/22
 """
 
-# Pedimos al usuario que introduzca dos números, los almacenamos en las variables num1 y num2
+num1 = int(input('Introduce el primer número: '))  # Pedimos al usuario que indique el primer número
+num2 = int(input('Introduce el segundo número: '))  # Pedimos al usuario que indique el segundo número
 
-num1 = int(input('Introduce el primer número: '))
-num2 = int(input('Introduce el segundo número: '))
-
-# Creamos la estructura alternativa con if else
-
-if num1 > num2:
-    print(f'{num1} es mayor que {num2}.')
-else:
-    print(f'{num1} es menor que {num2}.')
+if num1 > num2:  # Si el primer número es mayor que el segundo...
+    print(f'{num1} es mayor que {num2}.')  # El programa lo indica
+else:  # De lo contrario...
+    print(f'{num1} es menor que {num2}.')  # El programa indica que el primer número es menor

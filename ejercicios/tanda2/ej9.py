@@ -12,24 +12,18 @@ Autor del programa: Rafael Jiménez Cobos
 Fecha de creación: 14/10/22
 """
 
-# Importamos la librería 're' para trabajar con expresiones regulares
+import re  # Importamos la librería 're' para trabajar con expresiones regulares
 
-import re
+user_input = input('Introduce un carácter cualquiera: ')  # Pedimos al usuario que introduzca cualquier carácter
 
-# Pedimos al usuario que introduzca cualquier carácter
-
-user_input = input('Introduce un carácter cualquiera: ')
-
-# Creamos la estructura alternativa con if else
-
-if len(user_input) == 1:
-    if re.search("[.,;:-_()\'\"?¿¡!]", user_input):
-        print('Es signo de puntuación.')
-    elif re.search("[a-zA-Z]", user_input) or re.search("[áéíóúÁÉÍÓÚ]", user_input):
-        print('Es una letra.')
-    elif re.search("[0-9]", user_input):
-        print('Es un dígito.')
-    else:
-        print('Es otro carácter.')
-else:
-    print('No es un carácter.')
+if len(user_input) == 1:  # Si la longitud de la cadena introducida es exactamente igual a 1...
+    if re.search("[.,;:-_()\'\"?¿¡!]", user_input):  # Si encontramos un carácter de puntuación...
+        print('Es signo de puntuación.')  # Lo indicamos por pantalla
+    elif re.search("[a-zA-Z]", user_input) or re.search("[áéíóúÁÉÍÓÚ]", user_input):  # Si encontramos una letra...
+        print('Es una letra.')  # Lo indicamos por pantalla
+    elif re.search("[0-9]", user_input):  # Si encontramos un número...
+        print('Es un dígito.')  # Lo indicamos por pantalla
+    else:  # De lo contrario...
+        print('Es otro carácter.')  # Indicamos que se trata de otro carácter no planteado en el programa
+else:  # De lo contrario...
+    print('No es un carácter.')  # Indicamos por pantalla que no se trata de un solo carácter

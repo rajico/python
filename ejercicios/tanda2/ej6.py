@@ -5,13 +5,9 @@ Autor del programa: Rafael Jiménez Cobos
 Fecha de creación: 14/10/22
 """
 
-# Pedimos al usuario que introduzca un valor de tipo cadena.
+text = input('Introduce una cadena: ')  # Pedimos al usuario que introduzca un valor de tipo cadena
 
-text = input('Introduce una cadena: ')
-
-# Creamos la estructura alternativa con if else y comprobamos si la cadena posee una letra mayúscula.
-
-if any(c.isupper() for c in text):
-    print('La cadena contiene como mínimo un carácter en mayúscula.')
-else:
-    print('La cadena no contiene mayúsculas.')
+if any(c.isupper() for c in text):  # Si en la cadena encontramos alguna letra en mayúscula...
+    print('La cadena contiene como mínimo un carácter en mayúscula.')  # Lo indicamos en pantalla
+else:  # De lo contrario...
+    print('La cadena no contiene mayúsculas.')  # Lo indicamos en pantalla

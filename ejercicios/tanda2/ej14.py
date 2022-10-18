@@ -11,30 +11,32 @@ Autor del programa: Rafael Jiménez Cobos
 Fecha de creación: 16/10/22
 """
 
-grape_type = input('Introduce el tipo de uva, A ó B: ').upper()
-grape_size = int(input('Introduce el tamaño de uva, 1 ó 2: '))
-kg_price = float(input('Introduce el precio inicial para el kilo de uvas: '))
-final_price = 0
+grape_type = input('Introduce el tipo de uva, A ó B: ').upper()  # Indicamos al usuario introducir el tipo de
+# uva, almacenando el valor introducido en mayúsculas
+grape_size = int(input('Introduce el tamaño de uva, 1 ó 2: '))  # Indicamos al usuario introducir el tamaño de uva
+kg_price = float(input('Introduce el precio inicial para el kilo de uvas: '))  # Indicamos al usuario introducir
+# el precio inicial en kg
+final_price = 0  # Creamos la variable donde almacenaremos el precio final
 
-if grape_type == 'A':
-    if grape_size == 1:
-        final_price = kg_price + 0.20
-    elif grape_size == 2:
-        final_price = kg_price + 0.30
-    else:
-        print(f'{grape_size} no es un tamaño de uva admitido.')
+if grape_type == 'A':  # Si el tipo de uva es A...
+    if grape_size == 1:  # Y además el tamaño es exactamente igual a 1...
+        final_price = kg_price + 0.20  # El precio final es igual al precio inicial + un incremento de 0.20
+    elif grape_size == 2:  # O el tamaño es exactamente igual a 2...
+        final_price = kg_price + 0.30  # El precio final es igual al precio inicial + un incremento de 0.30
+    else:  # De lo contrario...
+        print(f'{grape_size} no es un tamaño de uva admitido.')  # Indicamos que el tamaño introducido no es válido
     print(
         f'El precio final teniendo en cuenta que el tipo es {grape_type} y el tamaño '
-        f'es {grape_size}, es de {final_price:.2f} €/kg.')
-elif grape_type == 'B':
-    if grape_size == 1:
-        final_price = kg_price - 0.30
-    elif grape_size == 2:
-        final_price = kg_price - 0.50
-    else:
-        print(f'{grape_size} no es un tamaño de uva admitido.')
+        f'es {grape_size}, es de {final_price:.2f} €/kg.')  # Mostramos por pantalla el precio final
+elif grape_type == 'B':  # Si el tipo de uva es B...
+    if grape_size == 1:  # Y además el tamaño es exactamente igual a 1...
+        final_price = kg_price - 0.30  # El precio final es igual al precio inicial - una rebaja de 0.30
+    elif grape_size == 2:  # Y además el tamaño es exactamente igual a 2...
+        final_price = kg_price - 0.50  # El precio final es igual al precio inicial - una rebaja de 0.50
+    else:  # De lo contrario...
+        print(f'{grape_size} no es un tamaño de uva admitido.')  # Indicamos que el tamaño introducido no es válido
     print(
         f'El precio final teniendo en cuenta que el tipo es {grape_type} y el tamaño '
-        f'es {grape_size}, es de {final_price:.2f} €/kg.')
-else:
-    print(f'{grape_type} no es un tipo de uva admitido.')
+        f'es {grape_size}, es de {final_price:.2f} €/kg.')  # Mostramos por pantalla el precio final
+else:  # De lo contrario...
+    print(f'{grape_type} no es un tipo de uva admitido.')  # Indicamos que el tipo introducido no es válido

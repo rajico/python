@@ -2,25 +2,25 @@
 Nombre del programa: Orden de ejecución de las estructuras alternativas
 Enunciado: Realiza el ejercicio 56 (página 100) del libro "Introducción a la Programación con Python 3".
 Indica qué líneas del último programa (y en qué orden) se ejecutarán para cada uno de los siguientes casos:
-1) a = 2 y b = 6. Desde la línea 12 hasta la 19, en orden.
-2) a = 0 y b = 3. Desde la 12 hasta la 15, desde la 21 hasta la 23, en orden.
-3) a = 0 y b = −3. Desde la 12 hasta la 15, desde la 21 hasta la 23, en orden.
-4) a = 0 y b = 0. Desde la 12 hasta la 15, desde la 21, 24 y 25, en orden.
+1) a = 2 y b = 6. Desde la línea 13 hasta la 20, en orden.
+2) a = 0 y b = 3. Desde la 13 hasta la 16, desde la 22 hasta la 24, en orden.
+3) a = 0 y b = −3. Desde la 13 hasta la 16, desde la 22 hasta la 24, en orden.
+4) a = 0 y b = 0. Desde la 13 hasta la 16, desde la 22, 25 y 26, en orden.
 Autor del programa: Rafael Jiménez Cobos
 Fecha de creación: 14/10/22
 """
 
 print('Programa para la resolución de la ecuación ax+b=0.')
 
-a = float(input('Valor de a: '))
-b = float(input('Valor de b: '))
+a = float(input('Valor de a: '))  # Pedimos al usuario que introduzca el valor de a
+b = float(input('Valor de b: '))  # Pedimos al usuario que introduzca el valor de b
 
-if a != 0:
-    x = -b / a
-    print('Solución: ', x)
+if a != 0:  # Si a es diferente a 0...
+    x = -b / a  # X es igual al resultado de -b / a
+    print('Solución: ', x)  # Mostramos por pantalla la solución
 
-if a == 0:
-    if b != 0:
-        print('La ecuación no tiene solución.')
-    if b == 0:
-        print('La ecuación tiene infinitas soluciones.')
+if a == 0:  # Si a es exactamente igual a 0...
+    if b != 0:  # Y además, b es diferente a 0...
+        print('La ecuación no tiene solución.')  # La ecuación no se puede solucionar
+    if b == 0:  # Y además, b es exactamente igual a 0...
+        print('La ecuación tiene infinitas soluciones.')  # La ecuación tiene infinitas soluciones

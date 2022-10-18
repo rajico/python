@@ -8,19 +8,15 @@ Autor del programa: Rafael Jiménez Cobos
 Fecha de creación: 14/10/22
 """
 
-# Pedimos al usuario la nota, la edad y el carácter sexo
+mark = int(input('Introduce la nota: '))  # Pedimos al usuario introducir la nota
+age = int(input('Introduce la edad: '))  # Pedimos al usuario introducir la edad
+sex = input('Introduce un carácter, M o F: ')  # Pedimos al usuario introducir el sexo
 
-mark = int(input('Introduce la nota: '))
-age = int(input('Introduce la edad: '))
-sex = input('Introduce un carácter, M o F: ')
-
-# Creamos la estructura alternativa con if else
-
-if mark >= 5:
-    if age >= 18:
-        if sex.upper() == 'F':
-            print('ACEPTADA')
-        if sex.upper() == 'M':
-            print('POSIBLE')
-else:
-    print('NO ACEPTADA')
+if mark >= 5:  # Si la nota es mayor o igual a 5...
+    if age >= 18:  # Y además la edad es mayor o igual a 18...
+        if sex.upper() == 'F':  # Si el sexo es mujer, 'F'...
+            print('ACEPTADA')  # Indicamos por pantalla ACEPTADA
+        if sex.upper() == 'M':  # Si el sexo es hombre, 'M'...
+            print('POSIBLE')  # Indicamos por pantalla POSIBLE
+else:  # De lo contrario...
+    print('NO ACEPTADA')  # Indicamos por pantalla NO ACEPTADA

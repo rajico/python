@@ -5,14 +5,12 @@ Autor del programa: Rafael Jiménez Cobos
 Fecha de creación: 14/10/22
 """
 
-# Primero, pedimos un número al usuario:
-
-num = int(input('Introduce un número: '))
+num = int(input('Introduce un número: '))  # Primero, pedimos un número al usuario:
 
 # Creamos la estructura alternativa con if else y comprobamos si el número es par o no si
 # al dividir entre 2 nos devuelve 0.
 
-if num % 2 == 0:
-    print(f'El número {num} es par.')
-else:
-    print(f'El número {num} es impar.')
+if num % 2 == 0:  # Si el resto de la división entre el número introducido y 2 es exactamente igual a 0...
+    print(f'El número {num} es par.')  # El número es par
+else:  # De lo contrario...
+    print(f'El número {num} es impar.')  # El número es impar

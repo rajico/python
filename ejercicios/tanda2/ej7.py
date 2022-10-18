@@ -11,16 +11,12 @@ Autor del programa: Rafael Jiménez Cobos
 Fecha de creación: 14/10/22
 """
 
-# Primero, pedimos al usuario la base y el exponente.
+base = int(input('Introduce la base: '))  # Pedimos al usuario que introduzca la base
+exp = int(input('Introduce el exponente: '))  # Pedimos al usuario que introduzca el exponente
 
-base = int(input('Introduce la base: '))
-exp = int(input('Introduce el exponente: '))
-
-# Creamos la estructura alternativa con if elif y else y cubrimos los 3 supuestos
-
-if exp > 0:
-    print(f'La potencia es {base}^{exp}.')
-elif exp == 0:
-    print(f'La potencia es 1.')
-else:
-    print(f'La potencia es 1/({base}^{abs(exp)}).')
+if exp > 0:  # Si el exponente es mayor que 0...
+    print(f'La potencia es {base}^{exp}.')  # Imprimimos la potencia
+elif exp == 0:  # Si el exponente es exactamente igual a 0...
+    print(f'La potencia es 1.')  # El resultado es 1
+else:  # De lo contrario...
+    print(f'La potencia es 1/({base}^{abs(exp)}).')  # El resultado es 1/potencia con el exponente positivo

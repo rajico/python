@@ -11,17 +11,21 @@ Autor del programa: Rafael Jiménez Cobos
 Fecha de creación: 16/10/22
 """
 
-student_count = int(input('¿Cuántos alumnos van a ir al viaje de estudios? '))
-price = 0
+student_count = int(input('¿Cuántos alumnos van a ir al viaje de estudios? '))  # Indicamos al usuario introducir
+# cuantos alumnos van a ir al viaje
+price = 0  # Creamos la variable donde almacenaremos el precio
 
-if student_count >= 100:
-    price = student_count * 65
-elif 55 <= student_count <= 99:
-    price = student_count * 70
-elif 30 <= student_count <= 49:
-    price = student_count * 95
-else:
-    price = 4000
+if student_count >= 100:  # Si la cantidad de alumnos es mayor o igual que 100...
+    price = student_count * 65  # El precio será igual a la cantidad de alumnos * 65 €
+elif 55 <= student_count <= 99:  # Si la cantidad de alumnos es mayor o igual que 55, pero menor o igual que
+    # 99...
+    price = student_count * 70  # El precio será igual a la cantidad de alumnos * 75 €
+elif 30 <= student_count <= 49:  # Si la cantidad de alumnos es mayor o igual que 30, pero menor o igual que
+    # 49...
+    price = student_count * 95  # El precio será igual a la cantidad de alumnos * 95 €
+else:  # De lo contrario...
+    price = 4000  # El precio se fija en 4000 €
 
 print(f'El precio final del pago a la compañía de autobuses teniendo en cuenta '
-      f'que van {student_count} alumnos, es de {price} €.')
+      f'que van {student_count} alumnos, es de {price} €.')  # Mostramos por pantalla la cantidad de alumnos
+# y el precio a pagar

@@ -13,50 +13,46 @@ Autor del programa: Rafael Jiménez Cobos
 Fecha de creación: 14/10/22
 """
 
-# Pedimos al usuario introducir una cantidad de euros
+money = int(input('Introduce una cantidad de euros: '))  # Pedimos al usuario introducir una cantidad de euros
 
-money = int(input('Introduce una cantidad de euros: '))
+coin = money  # Creamos la variable coin, con la que controlaremos la cantidad de billetes o monedas
 
-# Contamos cada euro
-
-euro = money
-
-five_hundred = euro // 500
-aux1 = euro % 500
-two_hundred = aux1 // 200
-aux2 = aux1 % 200
-one_hundred = aux2 // 100
-aux3 = aux2 % 100
-fifty = aux3 // 50
-aux4 = aux3 % 50
-twenty = aux4 // 20
-aux5 = aux4 % 20
-ten = aux5 // 10
-aux6 = aux5 % 10
-five = aux6 // 5
-aux7 = aux6 % 5
-two = aux7 // 2
-aux8 = aux7 % 2
-one = aux8 // 1
-aux9 = aux8 % 1
+five_hundred = coin // 500  # Realizamos la división exacta entre el número introducido y 500
+coin = coin % 500  # Almacenamos el resto en coin
+two_hundred = coin // 200  # Realizamos la división exacta entre el número introducido y 200
+coin = coin % 200  # Almacenamos el resto en coin
+one_hundred = coin // 100  # Realizamos la división exacta entre el número introducido y 100
+coin = coin % 100  # Almacenamos el resto en coin
+fifty = coin // 50  # Realizamos la división exacta entre el número introducido y 50
+coin = coin % 50  # Almacenamos el resto en coin
+twenty = coin // 20  # Realizamos la división exacta entre el número introducido y 20
+coin = coin % 20  # Almacenamos el resto en coin
+ten = coin // 10  # Realizamos la división exacta entre el número introducido y 10
+coin = coin % 10  # Almacenamos el resto en coin
+five = coin // 5  # Realizamos la división exacta entre el número introducido y 5
+coin = coin % 5  # Almacenamos el resto en coin
+two = coin // 2  # Realizamos la división exacta entre el número introducido y 2
+coin = coin % 2  # Almacenamos el resto en coin
+one = coin // 1  # Realizamos la división exacta entre el número introducido y 1
+coin = coin % 1  # Almacenamos el resto en coin
 
 print('Tenemos un total de:')
 
-if five_hundred >= 1:
-    print(f'Billetes de 500: {five_hundred}')
-if two_hundred >= 1:
-    print(f'Billetes de 200: {two_hundred}')
-if one_hundred >= 1:
-    print(f'Billetes de 100: {one_hundred}')
-if fifty >= 1:
-    print(f'Billetes de 50: {fifty}')
-if twenty >= 1:
-    print(f'Billetes de 20: {twenty}')
-if ten >= 1:
-    print(f'Billetes de 10: {ten}')
-if five >= 1:
-    print(f'Billetes de 5: {five}')
-if two >= 1:
-    print(f'Monedas de 2: {two}')
-if one >= 1:
-    print(f'Monedas de 1: {one}')
+if five_hundred >= 1:  # Si la cantidad de billetes de 500 es mayor o igual a 1...
+    print(f'Billetes de 500: {five_hundred}')  # Mostramos la cantidad
+if two_hundred >= 1:  # Si la cantidad de billetes de 200 es mayor o igual a 1...
+    print(f'Billetes de 200: {two_hundred}')  # Mostramos la cantidad
+if one_hundred >= 1:  # Si la cantidad de billetes de 100 es mayor o igual a 1...
+    print(f'Billetes de 100: {one_hundred}')  # Mostramos la cantidad
+if fifty >= 1:  # Si la cantidad de billetes de 50 es mayor o igual a 1...
+    print(f'Billetes de 50: {fifty}')  # Mostramos la cantidad
+if twenty >= 1:  # Si la cantidad de billetes de 20 es mayor o igual a 1...
+    print(f'Billetes de 20: {twenty}')  # Mostramos la cantidad
+if ten >= 1:  # Si la cantidad de billetes de 10 es mayor o igual a 1...
+    print(f'Billetes de 10: {ten}')  # Mostramos la cantidad
+if five >= 1:  # Si la cantidad de billetes de 5 es mayor o igual a 1...
+    print(f'Billetes de 5: {five}')  # Mostramos la cantidad
+if two >= 1:  # Si la cantidad de monedas de 2 es mayor o igual a 1...
+    print(f'Monedas de 2: {two}')  # Mostramos la cantidad
+if one >= 1:  # Si la cantidad de monedas de 1 es mayor o igual a 1...
+    print(f'Monedas de 1: {one}')  # Mostramos la cantidad
