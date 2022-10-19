@@ -4,11 +4,19 @@
 # tomando en cuenta su sueldo base y comisiones.
 # Autor del ejercicio: Rafael Jiménez Cobos
 
-base_salary = float(input('Introduce el salario base del vendedor: '))
-com = 10*base_salary/100
-monthly_sales = 3
-com_3_sales = com*monthly_sales
-total = base_salary+com_3_sales
+COMMISSION = 10
 
-print('El vendedor ha obtenido', com_3_sales, 'euros en comisiones por tres ventas.')
-print('El vendedor ha obtenido un total de', total, 'euros.')
+base_salary = float(input('Introduce el salario base del vendedor: '))
+sale1 = float(input('Introduce el dinero obtenido por la primera venta: '))
+sale2 = float(input('Introduce el dinero obtenido por la segunda venta: '))
+sale3 = float(input('Introduce el dinero obtenido por la tercera venta: '))
+
+com1 = COMMISSION * sale1 / 100
+com2 = COMMISSION * sale2 / 100
+com3 = COMMISSION * sale3 / 100
+
+total_commissions = com1 + com2 + com3
+total_gained = base_salary + total_commissions
+
+print(f'El vendedor ha obtenido {total_commissions:.2f} € en comisiones por tres ventas.')
+print(f'El vendedor ha obtenido un total de {total_gained:.2f} €.')
