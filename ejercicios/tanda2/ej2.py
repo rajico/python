@@ -2,10 +2,10 @@
 Nombre del programa: Orden de ejecución de las estructuras alternativas
 Enunciado: Realiza el ejercicio 56 (página 100) del libro "Introducción a la Programación con Python 3".
 Indica qué líneas del último programa (y en qué orden) se ejecutarán para cada uno de los siguientes casos:
-1) a = 2 y b = 6. Desde la línea 13 hasta la 20, en orden.
-2) a = 0 y b = 3. Desde la 13 hasta la 16, desde la 22 hasta la 24, en orden.
-3) a = 0 y b = −3. Desde la 13 hasta la 16, desde la 22 hasta la 24, en orden.
-4) a = 0 y b = 0. Desde la 13 hasta la 16, desde la 22, 25 y 26, en orden.
+1) a = 2 y b = 6.
+2) a = 0 y b = 3.
+3) a = 0 y b = −3.
+4) a = 0 y b = 0.
 Autor del programa: Rafael Jiménez Cobos
 Fecha de creación: 14/10/22
 """
