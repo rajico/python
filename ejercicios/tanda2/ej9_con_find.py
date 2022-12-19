@@ -12,16 +12,16 @@ Autor del programa: Rafael Jiménez Cobos
 Fecha de creación: 14/10/22
 """
 
-import re
+PUNCTUATION_MARKS = ".,;:-_()\'\"?¿¡![]{}"
 
 user_input = input('Introduce un carácter cualquiera: ')
 
 if len(user_input) == 1:
-    if re.search("[.,;:_()\'\"?¿¡!]", user_input) or re.search("-", user_input):
+    if PUNCTUATION_MARKS in user_input:
         print('Es signo de puntuación.')
-    elif re.search("[a-zA-Z]", user_input) or re.search("[áéíóúÁÉÍÓÚ]", user_input):
+    elif user_input.isalpha():
         print('Es una letra.')
-    elif re.search("[0-9]", user_input):
+    elif user_input.isdigit():
         print('Es un dígito.')
     else:
         print('Es otro carácter.')

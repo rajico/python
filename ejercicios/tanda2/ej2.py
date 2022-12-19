@@ -12,15 +12,15 @@ Fecha de creación: 14/10/22
 
 print('Programa para la resolución de la ecuación ax+b=0.')
 
-a = float(input('Valor de a: '))  # Pedimos al usuario que introduzca el valor de a
-b = float(input('Valor de b: '))  # Pedimos al usuario que introduzca el valor de b
+a = float(input('Valor de a: '))
+b = float(input('Valor de b: '))
 
-if a != 0:  # Si a es diferente a 0...
-    x = -b / a  # X es igual al resultado de -b / a
-    print('Solución: ', x)  # Mostramos por pantalla la solución
+if a != 0:
+    x = -b / a
+    print('Solución: ', x)
 
-if a == 0:  # Si a es exactamente igual a 0...
-    if b != 0:  # Y además, b es diferente a 0...
-        print('La ecuación no tiene solución.')  # La ecuación no se puede solucionar
-    if b == 0:  # Y además, b es exactamente igual a 0...
-        print('La ecuación tiene infinitas soluciones.')  # La ecuación tiene infinitas soluciones
+if a == 0:
+    if b != 0:
+        print('La ecuación no tiene solución.')
+    if b == 0:
+        print('La ecuación tiene infinitas soluciones.')

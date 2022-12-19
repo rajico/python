@@ -13,12 +13,10 @@ Autor del programa: Rafael Jiménez Cobos
 Fecha de creación: 16/10/22
 """
 
-call_duration = int(input('Introduce la duración de llamada en MINUTOS: '))  # Indicamos al usuario introducir
-# la duración de la llamada
-call_day = input('¿Qué día se realizó la llamada? ').lower()  # Indicamos al usuario introducir el día en el que
-# se realizó la llamada
-price = 0  # Creamos la variable donde almacenaremos el precio inicial
-final_price = 0  # Creamos la variable donde almacenaremos el precio final
+call_duration = int(input('Introduce la duración de llamada en MINUTOS: '))
+call_day = input('¿Qué día se realizó la llamada? ').lower()
+price = 0
+final_price = 0
 
 if call_day == 'domingo':  # Si el día en el que se realizó la llamada fue un domingo...
     if 1 <= call_duration <= 5:  # Si la duración de la llamada fue entre 1 y 5 minutos...

@@ -8,15 +8,15 @@ Autor del programa: Rafael Jiménez Cobos
 Fecha de creación: 14/10/22
 """
 
-mark = int(input('Introduce la nota: '))  # Pedimos al usuario introducir la nota
-age = int(input('Introduce la edad: '))  # Pedimos al usuario introducir la edad
-sex = input('Introduce un carácter, M o F: ')  # Pedimos al usuario introducir el sexo
+mark = int(input('Introduce la nota: '))
+age = int(input('Introduce la edad: '))
+gender = input('Introduce un carácter, M o F: ')
 
-if mark >= 5:  # Si la nota es mayor o igual a 5...
-    if age >= 18:  # Y además la edad es mayor o igual a 18...
-        if sex.upper() == 'F':  # Si el sexo es mujer, 'F'...
-            print('ACEPTADA')  # Indicamos por pantalla ACEPTADA
-        if sex.upper() == 'M':  # Si el sexo es hombre, 'M'...
-            print('POSIBLE')  # Indicamos por pantalla POSIBLE
-else:  # De lo contrario...
-    print('NO ACEPTADA')  # Indicamos por pantalla NO ACEPTADA
+if mark >= 5:
+    if age >= 18:
+        if gender.upper() == 'F':
+            print('ACEPTADA')
+        if gender.upper() == 'M':
+            print('POSIBLE')
+else:
+    print('NO ACEPTADA')

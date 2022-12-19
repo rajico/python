@@ -5,9 +5,9 @@ Autor del programa: Rafael Jiménez Cobos
 Fecha de creación: 14/10/22
 """
 
-num = int(input('Introduce un número: '))  # Primero, pedimos un número al usuario:
+num = int(input('Introduce un número: '))
 
-if num % 2 == 0:  # Si el resto de la división entre el número introducido y 2 es exactamente igual a 0...
-    print(f'El número {num} es par.')  # El número es par
-else:  # De lo contrario...
-    print(f'El número {num} es impar.')  # El número es impar
+if num % 2 == 0:
+    print(f'El número {num} es par.')
+else:
+    print(f'El número {num} es impar.')

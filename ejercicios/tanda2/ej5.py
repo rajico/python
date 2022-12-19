@@ -6,12 +6,12 @@ Autor del programa: Rafael Jiménez Cobos
 Fecha de creación: 14/10/22
 """
 
-age1 = int(input('Introduce la edad de la primera persona: '))  # Pedimos al usuario la edad de la primera persona
-age2 = int(input('Introduce la edad de la segunda persona: '))  # Pedimos al usuario la edad de la segunda persona
+age1 = int(input('Introduce la edad de la primera persona: '))
+age2 = int(input('Introduce la edad de la segunda persona: '))
 
-if age1 > age2:  # Si la primera persona es mayor que la segunda...
-    print('La primera persona es mayor que la segunda.')  # Lo indicamos
-elif age1 < age2:  # Si, por lo contrario, la segunda persona es mayor...
-    print('La segunda persona es mayor que la primera.')  # Lo indicamos
-elif age1 == age2:  # Si ambas personas tienen la misma edad...
-    print('Ambas personas tienen la misma edad.')  # Lo indicamos
+if age1 > age2:
+    print('La primera persona es mayor que la segunda.')
+elif age1 < age2:
+    print('La segunda persona es mayor que la primera.')
+elif age1 == age2:
+    print('Ambas personas tienen la misma edad.')

@@ -7,10 +7,9 @@ Autor del programa: Rafael Jiménez Cobos
 Fecha de creación: 14/10/22
 """
 
-year = int(input('Introduce un año: '))  # Pedimos al usuario que introduzca un año
+year = int(input('Introduce un año: '))
 
-if year % 4 == 0 and not year % 100 == 0 or year % 400 == 0:  # Si es un número divisible por 4, pero no si es
-    # divisible por 100, excepto que también sea divisible por 400...
-    print(f'El año {year} es bisiesto.')  # Indicamos que se trata de un año bisiesto
-else:  # De lo contrario...
-    print(f'El año {year} no es bisiesto.')  # Indicamos que no se trata de un año bisiesto
+if year % 4 == 0 and (not year % 100 == 0 or year % 400 == 0):
+    print(f'El año {year} es bisiesto.')
+else:
+    print(f'El año {year} no es bisiesto.')
