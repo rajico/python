@@ -30,7 +30,7 @@ class Fraction:
             new_numerator = self.numerator + (number * self.denominator)
             new_denominator = self.denominator * 1
         elif isinstance(number, Fraction):
-            new_denominator = Fraction.calcular_mcm(self, number)
+            new_denominator = Fraction.__calcular_mcm(self, number)
             new_numerator = (self.numerator * number.denominator) + (self.denominator * number.numerator)
         else:
             raise Exception("Solo se permite sumar números enteros y fracciones.")
@@ -41,7 +41,7 @@ class Fraction:
             new_numerator = self.numerator - (number * self.denominator)
             new_denominator = self.denominator * 1
         elif isinstance(number, Fraction):
-            new_denominator = Fraction.calcular_mcm(self, number)
+            new_denominator = Fraction.__calcular_mcm(self, number)
             new_numerator = (self.numerator * number.denominator) - (self.denominator * number.numerator)
         else:
             raise Exception("Solo se permite restar números enteros y fracciones.")
@@ -89,8 +89,8 @@ class Fraction:
         return self.numerator > other.numerator and self.denominator > other.numerator or \
             self.numerator == other.numerator and self.denominator == other.denominator
 
-    @staticmethod
-    def calcular_mcd(f1, f2):
+    @classmethod
+    def __calcular_mcd(cls, f1, f2):
         temporal = 0
         a = f1.denominator
         b = f2.denominator
@@ -100,11 +100,11 @@ class Fraction:
             a = temporal
         return a
 
-    @staticmethod
-    def calcular_mcm(f1, f2):
+    @classmethod
+    def __calcular_mcm(cls, f1, f2):
         a = f1.denominator
         b = f2.denominator
-        return (a * b) / Fraction.calcular_mcd(f1, f2)
+        return (a * b) / Fraction.__calcular_mcd(f1, f2)
 
 
 if __name__ == '__main__':

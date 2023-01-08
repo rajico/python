@@ -16,12 +16,9 @@ En Python podemos manejar pero no nos gusta, vamos a crear una clase Date. Debe 
 Autor del programa: Rafael Jiménez Cobos
 Fecha de creación: 11/12/22
 """
-from datetime import date
-import calendar
 
 
 class Date:
-
     MESES_CON_30D = [4, 6, 9, 11]
     MESES_CON_31D = [1, 3, 5, 7, 8, 10, 12]
 
@@ -59,8 +56,8 @@ class Date:
         dia = self.day + 1
         mes = self.month
         anyo = self.year
-        if (mes in Date.MESES_CON_30D and dia > 30) or (mes in Date.MESES_CON_31D and dia > 31)\
-                or ((Date.es_bisiesto(self) and dia > 29) or (not Date.es_bisiesto(self) and dia > 28)):
+        if (mes in Date.MESES_CON_30D and dia > 30) or (mes in Date.MESES_CON_31D and dia > 31) \
+                or ((Date.__es_bisiesto(self) and dia > 29) or (not Date.__es_bisiesto(self) and dia > 28)):
             # mes siguiente
             dia = 1
             mes += 1
@@ -82,10 +79,10 @@ class Date:
         elif mes in Date.MESES_CON_31D and dia < 1:
             dia = 31
             mes -= 1
-        elif Date.es_bisiesto(self) and dia < 1:
+        elif Date.__es_bisiesto(self) and dia < 1:
             dia = 29
             mes -= 1
-        elif not Date.es_bisiesto(self) and dia < 1:
+        elif not Date.__es_bisiesto(self) and dia < 1:
             dia = 28
             mes -= 1
         if mes < 1:  # nos pasamos de diciembre, año siguiente
@@ -138,10 +135,10 @@ class Date:
         elif mes in Date.MESES_CON_31D and dia < 1:
             dia = 31
             mes -= 1
-        elif Date.es_bisiesto(self) and dia < 1:
+        elif Date.__es_bisiesto(self) and dia < 1:
             dia = 29
             mes -= 1
-        elif not Date.es_bisiesto(self) and dia < 1:
+        elif not Date.__es_bisiesto(self) and dia < 1:
             dia = 28
             mes -= 1
         if mes < 1:  # nos pasamos de diciembre, año siguiente
@@ -150,35 +147,45 @@ class Date:
 
         return dia, mes, anyo
 
-    def fecha_int_a_date(self) -> date:
-        return date(self.year, self.month, self.day)
-
     def dia_de_la_semana(self):
-        fecha = Date.fecha_int_a_date(self)
-        dia_semana = calendar.day_name[fecha.weekday()]
+        a = int((14 - self.month) / 12)
+        y = self.year - a
+        m = int(self.month + (12 * a) - 2)
+        d = int(self.day + y + int(y / 4) - int(y / 100) + int(y / 400) + ((31 * m) / 12)) % 7
 
-        if dia_semana == "Monday":
-            dia_semana = "Lunes"
-        elif dia_semana == "Tuesday":
-            dia_semana = "Martes"
-        elif dia_semana == "Wednesday":
-            dia_semana = "Miércoles"
-        elif dia_semana == "Thursday":
-            dia_semana = "Jueves"
-        elif dia_semana == "Friday":
-            dia_semana = "Viernes"
-        elif dia_semana == "Saturday":
-            dia_semana = "Sábado"
-        elif dia_semana == "Sunday":
-            dia_semana = "Domingo"
-
+        if d == 0:
+            dia_semana = 'Domingo'
+        elif d == 1:
+            dia_semana = 'Lunes'
+        elif d == 2:
+            dia_semana = 'Martes'
+        elif d == 3:
+            dia_semana = 'Miércoles'
+        elif d == 4:
+            dia_semana = 'Jueves'
+        elif d == 5:
+            dia_semana = 'Viernes'
+        else:
+            dia_semana = 'Sábado'
         return dia_semana
 
-    @staticmethod
-    def validar_fecha(fecha):
+    @classmethod
+    def validar_fecha(cls, fecha):
         day = fecha.day
         month = fecha.month
         year = fecha.year
+        if 0 > len(str(fecha.day)) > 2:
+            raise Exception("La cifra del día no puede ser inferior a 0 o superior a 2.")
+        if fecha.day == 0 or fecha.day < 0:
+            raise Exception("El día no puede ser 0 o inferior.")
+        if 0 > len(str(fecha.month)) > 2:
+            raise Exception("La cifra del mes no puede ser inferior a 0 o superior a 2.")
+        if fecha.month == 0 or fecha.month < 0:
+            raise Exception("El mes no puede ser 0 o inferior.")
+        if 0 > len(str(fecha.year)) > 4:
+            raise Exception("La cifra del año no puede ser inferior a 0 o superior a 4.")
+        if fecha.year == 0 or fecha.year < 0:
+            raise Exception("El año no puede ser 0 o inferior.")
         check = False
 
         if month in Date.MESES_CON_30D and 30 >= day > 0:
@@ -194,8 +201,8 @@ class Date:
             check = False
         return check
 
-    @staticmethod
-    def es_bisiesto(fecha):
+    @classmethod
+    def __es_bisiesto(cls, fecha):
         return fecha.year % 4 == 0 and (fecha.year % 100 != 0 or fecha.year % 400 == 0)
 
 
@@ -223,14 +230,12 @@ if __name__ == '__main__':
     f_ene = Date(1, 1, 2023)
     f_dic = Date(31, 12, 2022)
 
-    print("Restando dos fechas:", f_10-f_11)
+    print("Restando dos fechas:", f_10 - f_11)
     print("Restando dos fechas:", f_12 - f_13)
     print("Restando dos fechas:", f_11 - f_13)
 
     print("Restando dos fechas:", f_ene - f_dic)
 
-    print("Prueba de int a date:", str(f_ene.fecha_int_a_date()))
-
-    fecha_actual = Date(17, 12, 2022)
+    fecha_actual = Date(8, 1, 2023)
 
     print("Día de la semana:", str(fecha_actual.dia_de_la_semana()))

@@ -44,7 +44,7 @@ class Duration:
     def __str__(self):
         return f"{self.horas},{self.minutos},{self.segundos}"
 
-    def sumar_segundos(self, segundos):
+    def __sumar_segundos(self, segundos):
         while True:
             if segundos > 60:
                 self.minutos += 1
@@ -59,30 +59,48 @@ class Duration:
             else:
                 break
 
-    def restar_segundos(self, segundos):
+    def __restar_segundos(self, segundos):
         seg = Duration.__segundos_total(self) - segundos
         assert seg >= 0
         result = Duration.__segundos_a_tiempo(seg)
         return result.horas, result.minutos, result.segundos
 
-    def sumar_duracion(self, duracion):
+    def __sumar_duracion(self, duracion):
         seg = Duration.__segundos_total(self) + Duration.__segundos_total(duracion)
         assert seg >= 0
         result = Duration.__segundos_a_tiempo(seg)
         return result.horas, result.minutos, result.segundos
 
-    def restar_duracion(self, duracion):
+    def __restar_duracion(self, duracion):
         seg = Duration.__segundos_total(self) - Duration.__segundos_total(duracion)
         assert seg >= 0
         result = Duration.__segundos_a_tiempo(seg)
         return result.horas, result.minutos, result.segundos
 
-    @staticmethod
-    def __segundos_total(tiempo):
+    def __sub__(self, other):
+        if isinstance(other, Duration):
+            return Duration.__restar_duracion(self, other)
+        else:
+            seg = Duration.__segundos_total(self) - other
+            assert seg >= 0
+            result = Duration.__segundos_a_tiempo(seg)
+            return result.horas, result.minutos, result.segundos
+
+    def __add__(self, other):
+        if isinstance(other, Duration):
+            return Duration.__sumar_duracion(self, other)
+        else:
+            seg = Duration.__segundos_total(self) + other
+            assert seg >= 0
+            result = Duration.__segundos_a_tiempo(seg)
+            return result.horas, result.minutos, result.segundos
+
+    @classmethod
+    def __segundos_total(cls, tiempo):
         return tiempo.horas * 3600 + tiempo.minutos * 60 + tiempo.segundos
 
-    @staticmethod
-    def __segundos_a_tiempo(s):
+    @classmethod
+    def __segundos_a_tiempo(cls, s):
         horas = s // 3600
         s = s % 3600
         minutos = s // 60
@@ -91,18 +109,24 @@ class Duration:
 
 
 if __name__ == '__main__':
-    t = Duration(10, 62, 15)
-    t1 = Duration(11, 20, 30)
+    # t = Duration(10, 62, 15)
+    t = Duration(10, 10, 10)
+    # t1 = Duration(11, 20, 30)
+    t1 = Duration(11, 11, 11)
     t2 = Duration(11, 20, 30)
     print(str(t.horas)+","+str(t.minutos)+","+str(t.segundos))
 
     print(f"Comparando t y t1: "+str(t == t1))
     print(f"Comparando t1 y t2: "+str(t1 == t2))
 
-    t2.sumar_segundos(360)
+    # t2.sumar_segundos(360)
 
     print(f"Sumando segundos: "+str(t2))
-    print(f"Restando segundos: "+str(t.restar_segundos(660)))
+    print(f"Sumando segundos: "+str(t2+360))
+    # print(f"Restando segundos: "+str(t.restar_segundos(660)))
+    print(f"Restando segundos: "+str(t - 660))
 
-    print(f"Sumando duraciones de tiempo:"+str(t.sumar_duracion(t1)))
-    print(f"Restando duraciones de tiempo:" + str(t1.restar_duracion(t)))
+    # print(f"Sumando duraciones de tiempo:"+str(t.sumar_duracion(t1)))
+    print(f"Sumando duraciones de tiempo:" + str(t1 + t))
+    # print(f"Restando duraciones de tiempo:" + str(t1.restar_duracion(t)))
+    print(f"Restando duraciones de tiempo:" + str(t1 - t))
