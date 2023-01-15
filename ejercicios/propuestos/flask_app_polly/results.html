@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Mostrar resultados</title>
+    </head>
+    <body>
+        <strong>voiceId: </strong>{{voices}}
+        <br>
+        <strong>Text to synthesize: </strong>{{text_to_synthesize}}
+        <br>
+        <strong>Response: Audio file is saved into  </strong>{{response['SynthesisTask']['OutputUri']}}
+        <br>
+        <strong>Renamed output file </strong>{{filename}} <strong>to </strong>{{new_filename}}
+        <br><br>
+        <!--
+        <audio controls>
+          <source src={{audio_path}} type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>
+        -->
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Polly - Text to Voice synthesizer</title>
+    </head>
+    <body>
+        <h2>Polly parameter form</h2>
+        <hr/>
+        <form method="POST" action="{{url_for('process')}}">
+            <input type="radio" id="lucia" name="voices" value="Lucia">
+            <label for="lucia">Lucia</label><br>
+            <input type="radio" id="conchita" name="voices" value="Conchita">
+            <label for="conchita">Conchita</label><br>
+            <input type="radio" id="enrique" name="voices" value="Enrique">
+            <label for="enrique">Enrique</label><br>
+            <input type="text" id="texto" name="texto" placeholder="Introduce el texto a sintetizar"><br>
+            <input type="text" id="new_filename" name="new_filename" placeholder="Introduce nombre para el fichero"><br>
+            <input type="submit">
+        </form>
+    </body>
+</html>
