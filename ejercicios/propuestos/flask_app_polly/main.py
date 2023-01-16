@@ -67,7 +67,7 @@ def process():
         s3.delete_object(Bucket="ceiabd-rjc-bucket", Key=f"{filename}")
         s3.download_file('ceiabd-rjc-bucket', new_filename, f'./downloads/{new_filename}')
 
-        audio_path = f'./downloads/{new_filename}'
+        audio_path = f'./downloads'
 
         time.sleep(10)
 
