@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Leads - Prediction with Naive Bayes model</title>
+    </head>
+    <body>
+        <h2>Leads parameter form, Page 2</h2>
+        <hr/>
+        <form method="POST" action="{{url_for('data_form3')}}">
+            Lead Source_Welingak website? -
+            <label for="q0answer1">Yes</label>
+            <input type="radio" id="q0answer1" name="pregunta0" value="1">
+            <label for="q0answer2">No</label>
+            <input type="radio" id="q0answer2" name="pregunta0" value="0"><br>
+
+            Last Activity_Converted to lead? -
+            <label for="q1answer1">Yes</label>
+            <input type="radio" id="q1answer1" name="pregunta1" value="1">
+            <label for="q1answer2">No</label>
+            <input type="radio" id="q1answer2" name="pregunta1" value="0"><br>
+
+            Last Activity_Converted to Email? -
+            <label for="q2answer1">Yes</label>
+            <input type="radio" id="q2answer1" name="pregunta2" value="1">
+            <label for="q2answer2">No</label>
+            <input type="radio" id="q2answer2" name="pregunta2" value="0"><br>
+
+            Last Activity_Email bounced? -
+            <label for="q3answer1">Yes</label>
+            <input type="radio" id="q3answer1" name="pregunta3" value="1">
+            <label for="q3answer2">No</label>
+            <input type="radio" id="q3answer2" name="pregunta3" value="0"><br>
+
+            Last Activity_Email link clicked? -
+            <label for="q4answer1">Yes</label>
+            <input type="radio" id="q4answer1" name="pregunta4" value="1">
+            <label for="q4answer2">No</label>
+            <input type="radio" id="q4answer2" name="pregunta4" value="0"><br>
+
+            Last Activity_Email opened? -
+            <label for="q5answer1">Yes</label>
+            <input type="radio" id="q5answer1" name="pregunta5" value="1">
+            <label for="q5answer2">No</label>
+            <input type="radio" id="q5answer2" name="pregunta5" value="0"><br>
+
+            Last Activity_Olark chat conversation? -
+            <label for="q6answer1">Yes</label>
+            <input type="radio" id="q6answer1" name="pregunta6" value="1">
+            <label for="q6answer2">No</label>
+            <input type="radio" id="q6answer2" name="pregunta6" value="0"><br>
+
+            Last Activity_Page visited on website? -
+            <label for="q7answer1">Yes</label>
+            <input type="radio" id="q7answer1" name="pregunta7" value="1">
+            <label for="q7answer2">No</label>
+            <input type="radio" id="q7answer2" name="pregunta7" value="0"><br>
+
+            Last Activity_SMS sent? -
+            <label for="q8answer1">Yes</label>
+            <input type="radio" id="q8answer1" name="pregunta8" value="1">
+            <label for="q8answer2">No</label>
+            <input type="radio" id="q8answer2" name="pregunta8" value="0"><br>
+
+            Specialization_Banking, Investment and Insurance? -
+            <label for="q9answer1">Yes</label>
+            <input type="radio" id="q9answer1" name="pregunta9" value="1">
+            <label for="q9answer2">No</label>
+            <input type="radio" id="q9answer2" name="pregunta9" value="0"><br>
+
+            Specialization_Business Administration? -
+            <label for="q10answer1">Yes</label>
+            <input type="radio" id="q10answer1" name="pregunta10" value="1">
+            <label for="q10answer2">No</label>
+            <input type="radio" id="q10answer2" name="pregunta10" value="0"><br>
+
+            Specialization_Finance Management? -
+            <label for="q11answer1">Yes</label>
+            <input type="radio" id="q11answer1" name="pregunta11" value="1">
+            <label for="q11answer2">No</label>
+            <input type="radio" id="q11answer2" name="pregunta11" value="0"><br>
+
+            Specialization_Human Resource Management? -
+            <label for="q12answer1">Yes</label>
+            <input type="radio" id="q12answer1" name="pregunta12" value="1">
+            <label for="q12answer2">No</label>
+            <input type="radio" id="q12answer2" name="pregunta12" value="0"><br>
+
+            Specialization_IT Projects Management? -
+            <label for="q13answer1">Yes</label>
+            <input type="radio" id="q13answer1" name="pregunta13" value="1">
+            <label for="q13answer2">No</label>
+            <input type="radio" id="q13answer2" name="pregunta13" value="0"><br>
+
+            <input type="hidden" id="hidden" name="list1" value="{{list}}">
+
+            <input type="submit" value="Continuar">
+        </form>
+    </body>
+</html>

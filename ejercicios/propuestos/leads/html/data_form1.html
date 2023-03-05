@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Leads - Prediction with Naive Bayes model</title>
+    </head>
+    <body>
+        <h2>Leads parameter form, Page 1</h2>
+        <hr/>
+        <form method="POST" action="{{url_for('data_form2')}}">
+            Do not Email? -
+            <label for="q0answer1">Yes</label>
+            <input type="radio" id="q0answer1" name="pregunta0" value="1">
+            <label for="q0answer2">No</label>
+            <input type="radio" id="q0answer2" name="pregunta0" value="0"><br>
+
+            Total Visits? -
+            <input type="text" id="q1answer" name="pregunta1" placeholder="Total visits..."><br>
+
+            Total time spent on Website? -
+            <input type="text" id="q2answer" name="pregunta2" placeholder="Total time spent on website..."><br>
+
+            Page views per visit? -
+            <input type="text" id="q3answer" name="pregunta3" placeholder="Page views per visit..."><br>
+
+            A free copy of Mastering the Interview? -
+            <label for="q4answer1">Yes</label>
+            <input type="radio" id="q4answer1" name="pregunta4" value="1">
+            <label for="q4answer2">No</label>
+            <input type="radio" id="q4answer2" name="pregunta4" value="0"><br>
+
+            Lead Origin_API? -
+            <label for="q5answer1">Yes</label>
+            <input type="radio" id="q5answer1" name="pregunta5" value="1">
+            <label for="q5answer2">No</label>
+            <input type="radio" id="q5answer2" name="pregunta5" value="0"><br>
+
+            Lead Origin_Landing page submission? -
+            <label for="q6answer1">Yes</label>
+            <input type="radio" id="q6answer1" name="pregunta6" value="1">
+            <label for="q6answer2">No</label>
+            <input type="radio" id="q6answer2" name="pregunta6" value="0"><br>
+
+            Lead Origin_Lead add form? -
+            <label for="q7answer1">Yes</label>
+            <input type="radio" id="q7answer1" name="pregunta7" value="1">
+            <label for="q7answer2">No</label>
+            <input type="radio" id="q7answer2" name="pregunta7" value="0"><br>
+
+            Lead Source_Direct traffic? -
+            <label for="q8answer1">Yes</label>
+            <input type="radio" id="q8answer1" name="pregunta8" value="1">
+            <label for="q8answer2">No</label>
+            <input type="radio" id="q8answer2" name="pregunta8" value="0"><br>
+
+            Lead Source_Google? -
+            <label for="q9answer1">Yes</label>
+            <input type="radio" id="q9answer1" name="pregunta9" value="1">
+            <label for="q9answer2">No</label>
+            <input type="radio" id="q9answer2" name="pregunta9" value="0"><br>
+
+            Lead Source_Olark chat? -
+            <label for="q10answer1">Yes</label>
+            <input type="radio" id="q10answer1" name="pregunta10" value="1">
+            <label for="q10answer2">No</label>
+            <input type="radio" id="q10answer2" name="pregunta10" value="0"><br>
+
+            Lead Source_Organic search? -
+            <label for="q11answer1">Yes</label>
+            <input type="radio" id="q11answer1" name="pregunta11" value="1">
+            <label for="q11answer2">No</label>
+            <input type="radio" id="q11answer2" name="pregunta11" value="0"><br>
+
+            Lead Source_Reference? -
+            <label for="q12answer1">Yes</label>
+            <input type="radio" id="q12answer1" name="pregunta12" value="1">
+            <label for="q12answer2">No</label>
+            <input type="radio" id="q12answer2" name="pregunta12" value="0"><br>
+
+            Lead Source_Referral sites? -
+            <label for="q13answer1">Yes</label>
+            <input type="radio" id="q13answer1" name="pregunta13" value="1">
+            <label for="q13answer2">No</label>
+            <input type="radio" id="q13answer2" name="pregunta13" value="0"><br>
+
+            <input type="submit" value="Continuar">
+        </form>
+    </body>
+</html>
